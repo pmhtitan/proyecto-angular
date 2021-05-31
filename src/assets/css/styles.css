@@ -9,6 +9,11 @@
 	src: url("fonts/finger.ttf");
 }
 
+@font-face{
+	font-family: "yellowtail";
+	src: url("fonts/yellowtail.ttf");
+}
+
 /*Generales*/
 
 *{
@@ -60,38 +65,6 @@ footer{
 	margin-bottom: 70px;
 }
 
-#title h1{
-	font-family: "finger";
-	font-size: 60px;
-	border-bottom: 1px solid #ccc;
-	padding-bottom: 5px;
-}
-
-#title h2{
-	font-size: 25px;
-	color: gray;
-	margin-top: 5px;
-	margin-bottom: 5px;
-}
-
-article.about{
-	width: 70%;
-	margin: 0px auto;
-	margin-bottom: 20px;
-	font-size: 23px;
-}
-
-.about h2{
-	border-bottom: 1px solid #ccc;
-	padding-bottom: 5px;
-	margin-bottom: 5px;
-}
-
-.about p{
-	padding-top: 20px;
-	padding-bottom: 30px;
-	text-align: justify;
-}
 
 /*Sección con formulario*/
 .container .image{
@@ -107,13 +80,6 @@ article.about{
 	float: left;
 	width: 48%;
 	margin-left:30px;
-}
-
-.container h2{
-	display: block;
-	border-bottom: 1px solid #ccc;
-	padding-bottom: 10px;
-	margin-bottom: 15px;
 }
 
 form{
@@ -232,4 +198,71 @@ form input[disabled]{
 .project a{
 	text-decoration: none;
 	color: black;
+}
+
+/* Fixes varios  ------ */
+
+/* Navbar */
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
+    color: #842029;
+}
+.navbar-light .navbar-nav .nav-link {
+    color: rgba(0,0,0,.75);
+}
+
+/* Custom button */
+.btn-outline-custom {
+    color: #842029;
+    border-color: #842029;
+}
+.btn-outline-custom.focus, .btn-outline-custom:focus {
+    box-shadow: 0 0 0 0.2rem #842029a6;
+}
+.btn-outline-custom:hover {
+    color: #fff;
+    background-color: #842029;
+    border-color: #842029;
+}
+.btn-outline-custom:not(:disabled):not(.disabled).active, .btn-outline-custom:not(:disabled):not(.disabled):active, .show>.btn-outline-custom.dropdown-toggle {
+    color: #fff;
+    background-color: #842029;
+    border-color: #842029;
+}
+.font-wg-700{
+	font-weight: 700;
+}
+
+/* Box general container*/
+.background-box{
+	min-height: 600px;
+	height: auto;
+	margin: 0px auto;
+	box-shadow: 0px 0px 15px black;
+	border-left:1px solid #b7b7b7;
+	border-right:1px solid #b7b7b7;
+	background: rgba(255, 255, 255, 0.7);
+	padding-top: 120px;
+}
+
+.line-bottom-grey{
+	border-bottom: 1px solid #ccc;
+}
+.font-yellowtail{
+	font-family: "yellowtail";
+}
+.font-finger{
+	font-family: "finger";
+}
+.h2-about{
+	font-size: 35px;
+}
+
+@media only screen and (min-width: 720px){
+	.background-box{
+		width: 75%;
+		box-shadow: 0px 0px 30px black;
+	}
+	.h2-about{
+		font-size: 44px;
+	}
 }

@@ -9,11 +9,11 @@ import { ContactComponent } from './components/contact/contact.component';
 
 const routes: Routes = [
 
-  { path: '', pathMatch: 'full', redirectTo: 'projects' },
-  { path: 'projects', component: ProjectsComponent },
-  { path: 'create', component: CreateComponent },
-  { path: 'about', component: AboutComponent },
-  { path: 'contact', component: ContactComponent }
+  { path: '', pathMatch: 'full', redirectTo: 'proyectos' },
+  { path: 'proyectos', component: ProjectsComponent },
+  { path: 'crear-proyecto', component: CreateComponent },
+  { path: 'sobre-mi', component: AboutComponent },
+  { path: 'contacto', component: ContactComponent }
 
 ];
 
