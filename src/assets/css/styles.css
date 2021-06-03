@@ -82,48 +82,24 @@ footer{
 	margin-left:30px;
 }
 
-form{
-	width: 80%;
-}
-
-form label{
-	display: block;
-	width: 100%;
-	margin-top: 10px;
-	margin-bottom: 5px;
-}
-
-form input[type="text"],
+/* form input[type="text"],
 form input[type="number"],
 form input[type="email"],
 form textarea{
 	width: 40%;
 	padding: 5px;
 }
+ */
 
-form button,
-form input[type="submit"],
-.button-edit,
-.button-delete{
-	display: block;
-	font-size: 17px;
-	padding: 10px;
-	margin-top: 15px; 
-	color:white;
-	background: rgba(53, 103, 164, 1);
-	border: 1px solid rgba(13, 67, 133, 1);
-	cursor: pointer;
-}
-
-.button-edit,
+/* .button-edit,
 .button-delete{
 	width: 20%;
 	float: left;
 	margin-right: 10px;
 	text-decoration: none;
-}
+} */
 
-.button-edit{
+/* .button-edit{
 	background: orange;
 	border: none;
 }
@@ -131,13 +107,13 @@ form input[type="submit"],
 .button-delete{
 	background: red;
 	border: none;
-}
+} */
 
-form button:hover,
+/* form button:hover,
 form input[type="submit"]:hover{
 	background: rgba(53, 103, 164, 0.8);
 	border: 1px solid rgba(13, 67, 133, 1);
-}
+} */
 
 form input[disabled]{
 	opacity: 0.4;
@@ -145,7 +121,7 @@ form input[disabled]{
 }
 
 .form_error{
-	font-size: 13px;
+	font-size: 14px;
 	padding: 3px;
 	background: red;
 	color:white;
