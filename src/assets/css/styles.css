@@ -151,21 +151,50 @@ form input[disabled]{
 /*Pagina de proyectos*/
 
 .project{
-	list-style: none;
+	/* list-style: none;
 	display: block;
 	float: left;
 	width: 28%;
 	text-align: center;
 	margin-left: 20px;
 	margin-right: 20px;
-	margin-bottom: 30px;
+	margin-bottom: 30px; */
 }
 
 .project .image{
 	width: 100%;
-	height: 150px;
-	overflow: hidden;
+	height: 120px;
+	overflow: hidden; /* SI LO QUITAS BRO, VES LA MAGIA DEL BLUR. Pero el overflow hidden hace que no se coman */
 }
+/* Blur effect double img css */
+.project .relative{
+	position: relative;
+}
+.project .absolute{
+	position: absolute;
+}
+.project .top-4{ 
+	top: 1rem;
+}
+.project .left-0{ 
+	left: 0;
+}
+.project .blur-lg{ 
+	filter: blur(16px) saturate(1.5);
+}
+.project .saturate-150{ 
+}
+.project .rounded-xl{
+    border-radius: .75rem;
+}
+.project .blur-0{
+	filter: blur(0);
+}
+.project .transform{
+	transform: scaleX(1) scaleY(1);
+}
+
+/* -- End blur eff css */
 
 .project img{
 	width: 100%;

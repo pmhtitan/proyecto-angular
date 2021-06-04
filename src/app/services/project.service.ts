@@ -11,20 +11,20 @@ import { Project } from '../models/project';
 })
 export class ProjectService {
 
-    public URL: string;
+    public url: string;
 
     // Http Header
     httpHeaders = new HttpHeaders().set('Content-Type', 'application/json');
 
   constructor(private _httpClient: HttpClient) { 
-    this.URL = Global.url;
-  }
-
-  testService(){
-    return "probando servicio de angular";
+    this.url = Global.url;
   }
 
   addProject(data: Project): Observable<any>{
-    return this._httpClient.post(this.URL + 'save-project',JSON.stringify(data), {headers: this.httpHeaders});
+    return this._httpClient.post(this.url + 'save-project',JSON.stringify(data), {headers: this.httpHeaders});
+  }
+
+  getProjects(): Observable<any>{
+    return this._httpClient.get(this.url+'projects', {headers: this.httpHeaders});
   }
 }
