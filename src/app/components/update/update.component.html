@@ -1,18 +1,18 @@
+<div *ngIf="projectModel">
     <h1 class="display-4 mb-4 ">{{ title }}</h1>
-    <h3 class="mb-5">¿Cuál será tu nuevo proyecto?</h3>
+    <h3 class="mb-5">Página de edición del proyecto</h3>
 
     <!-- Form -->
     <div class="row mt-5 text-start">
         <div class="col-lg-12 col-12">
             <div class="col-lg-6 offset-lg-3">
 
-                <span class="message success" *ngIf="status == 'success'">El proyecto se ha creado correctamente, <a [routerLink]="['/proyecto', project_saved._id]">ver el proyecto</a></span>
-                <span class="message failed" *ngIf="status == 'failed'">El proyecto no se pudo crear.</span>
+                <span class="message success" *ngIf="status == 'success'">El proyecto se ha actualizado correctamente</span>
+                <span class="message failed" *ngIf="status == 'failed'">El proyecto no se pudo actualizar.</span>
                 <form #projectForm="ngForm" (ngSubmit)="onSubmit(projectForm)">
                     <div class="mb-3">
                         <label for="nameFor" class="form-label">Nombre</label>
-                        <input type="text" class="form-control" name="name" #name="ngModel" [(ngModel)]="projectModel.name" aria-describedby="emailHelp" required>
-                        <div id="emailHelp" class="form-text">El nombre es importante a la hora de crear un proyecto.</div>
+                        <input type="text" class="form-control" name="name" #name="ngModel" [(ngModel)]="projectModel.name" required>
                         <span class="form_error" *ngIf="name.touched && !name.valid">
                             El nombre es obligatorio
                         </span>
@@ -21,7 +21,7 @@
                         <label for="descriptionFor" class="form-label">Descripción</label>
                         <textarea class="form-control" #description="ngModel" [(ngModel)]="projectModel.description" name="description" required></textarea>
                         <span class="form_error" *ngIf="description.touched && !description.valid">
-                         La descripción es obligatoria
+                        La descripción es obligatoria
                         </span>
                     </div>
                     <div class="mb-3">
@@ -45,13 +45,14 @@
                             Al menos un lenguaje es obligatorio
                         </span>
                     </div>
-                    <div class="mb-3">
-                        <label for="imageFor" class="form-label">Imagen del proyecto</label>
-                        <input type="file" class="form-control" name="image" #image="ngModel" [(ngModel)]="projectModel.image" required (change)="fileChangeEvent($event)">
-                        <!-- El ngModel de image NO es necesario. Lo hacemos con filesToUpload con ChangeEvent. Esto esto solo es para que la img sea obligatoria -->
-                        <span class="form_error" *ngIf="image.touched && !image.valid">
-                            La imagen del proyecto es obligatoria
-                        </span>
+                    <div class="mb-3">                        
+                        <div *ngIf="projectModel.image">
+                            <label for="imageFor" class="form-label">Imagen anterior</label><br>
+                            <img src="{{url+'get-image/'+projectModel.image}}" width="100" height="80"/>
+                        </div>
+                        <label for="imageFor" class="form-label">Nueva imagen del proyecto</label>
+                        <input type="file" class="form-control" name="image" required (change)="fileChangeEvent($event)">
+  
                     </div>
                     <div class="text-center text-md-start">
                         <button type="submit" class="btn btn-primary mb-5" [disabled]="!projectForm.form.valid">Submit</button>
@@ -61,5 +62,4 @@
             </div>            
         </div>
     </div>
-
-    <a href="#" class="btn btn-lg btn-outline-custom mx-1 font-wg-700">Ver todos</a>
+</div>

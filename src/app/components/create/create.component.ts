@@ -17,6 +17,7 @@ export class CreateComponent implements OnInit {
 
   public title: string;
   public projectModel: Project;
+  public project_saved;
   public projectForm2: FormGroup;
   public status: string;
   public filesToUpload: Array<File>;
@@ -45,6 +46,7 @@ export class CreateComponent implements OnInit {
             .then((result:any) => {
 
               console.log(result);
+              this.project_saved = result.project;
 
               this.status = "success";
               form.reset();

@@ -8,7 +8,7 @@
     <div class="col-md-12">
         <div class="row align-items-center justify-content-center">
             <div *ngFor="let proj of projects; let i = index" [ngClass]="['col-lg-4', 'col-md-6','mt-3', 'project']">
-                <a href="#">
+                <a [routerLink]="['/proyecto', proj._id]">
                     <div class="image relative">
                         <img src="{{url+'get-image/'+proj.image}}" *ngIf="proj.image" class="absolute top-4 left-0 filter blur-lg saturate-150" />
                         <img src="{{url+'get-image/'+proj.image}}" *ngIf="proj.image" class="rounded-xl blur-0 transform" />

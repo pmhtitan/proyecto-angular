@@ -166,6 +166,9 @@ form input[disabled]{
 	height: 120px;
 	overflow: hidden; /* SI LO QUITAS BRO, VES LA MAGIA DEL BLUR. Pero el overflow hidden hace que no se coman */
 }
+.image-projectSelected{
+	width: 100%;
+}
 /* Blur effect double img css */
 .project .relative{
 	position: relative;
@@ -269,5 +272,11 @@ form input[disabled]{
 	}
 	.h2-about{
 		font-size: 44px;
+	}	
+}
+
+@media only screen and (min-width: 1000px){
+	.image-projectSelected.relative img {
+		height: 350px;
 	}
 }

@@ -1,0 +1,21 @@
+<div>
+    <div *ngIf="projectSelected" [ngClass]="['project']">
+        <h1>Proyecto: <br>{{ projectSelected.name }}</h1>
+        <hr/>
+        <h2 class="text-muted">{{ projectSelected.category }}</h2>
+        <div class="image-projectSelected relative">
+            <img src="{{url+'get-image/'+projectSelected.image}}" *ngIf="projectSelected.image" class="absolute top-4 left-0 filter blur-lg saturate-150" />
+            <img src="{{url+'get-image/'+projectSelected.image}}" *ngIf="projectSelected.image" class="rounded-xl blur-0 transform" />
+        </div>
+        <p class="mt-4">{{ projectSelected.description }}</p>
+        <div class="mt-4" *ngIf="confirm == false">
+            <a [routerLink]="['/editar-proyecto', projectSelected._id]" class="me-5 px-4 btn btn-warning">Editar</a>
+            <a (click)="setConfirm(true)" class="btn  px-4 btn-danger">Borrar</a>
+        </div>
+        <div class="mt-4" *ngIf="confirm == true">
+            <p class="mb-3"><strong>¿Estás seguro que quieres eliminar este proyecto?</strong></p>
+            <a (click)="setConfirm(false)" class="me-5 px-4 btn btn-warning">Cancelar</a>
+            <a (click)="removeProject(projectSelected._id)" class="btn  px-4 btn-danger">Eliminar definitivamente</a>
+        </div>
+    </div>        
+</div>

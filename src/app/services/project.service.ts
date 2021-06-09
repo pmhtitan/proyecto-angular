@@ -27,4 +27,16 @@ export class ProjectService {
   getProjects(): Observable<any>{
     return this._httpClient.get(this.url+'projects', {headers: this.httpHeaders});
   }
+
+  getProject(id: any): Observable<any>{
+    return this._httpClient.get(this.url+'get-project/'+id, {headers: this.httpHeaders});
+  }
+
+  removeProject(id: any): Observable<any>{
+    return this._httpClient.delete(this.url+'project/'+id, {headers: this.httpHeaders});
+  }
+
+  updateProject(project): Observable<any>{
+    return this._httpClient.put(this.url+'project/'+project._id, JSON.stringify(project), {headers: this.httpHeaders});
+  }
 }
