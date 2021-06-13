@@ -1,1 +1,23 @@
-<p>contact works!</p>
+<div class="container">
+    <h1 class="display-4 mb-4 ">Contacto</h1>
+
+    <div class="form-group col-lg-6 offset-lg-3">
+        <label for="sizeSlider" class="form-label">Tamaño del slider</label>
+        <input type="number" [(ngModel)]="textInputAnchura" class="form-control" (keyup)="cargarSlider()"
+            onkeydown="javascript: return event.keyCode == 69 ? false : true" />
+    </div>
+
+    <div *ngIf="anchuraFinal" class="mb-2">
+        <app-slider [anchura]="anchuraFinal" (conseguirAutor)="getAutor($event)"></app-slider>
+    </div>
+    <div *ngIf="autor" class="mt-4">
+        <h2>Datos del autor</h2>
+        <div>
+            <span>{{ autor.nombre }}</span><br>
+            <span> {{ autor.website }} </span><br>
+            <span> {{ autor.youtube }}</span>
+        </div>
+    </div>
+
+
+</div>

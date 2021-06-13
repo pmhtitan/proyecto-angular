@@ -11,6 +11,7 @@ import { CreateComponent } from './components/create/create.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { DetailComponent } from './components/detail/detail.component';
 import { UpdateComponent } from './components/update/update.component';
+import { SliderComponent } from './components/slider/slider.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { UpdateComponent } from './components/update/update.component';
     CreateComponent,
     ContactComponent,
     DetailComponent,
-    UpdateComponent
+    UpdateComponent,
+    SliderComponent
   ],
   imports: [
     BrowserModule,
